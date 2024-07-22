@@ -46,7 +46,7 @@ pip install pipenv
 git clone https://github.com/kabiromohd/Ride-Duration-Prediction.git
 ```
 
-### Explore and prepare the data
+## Explore and prepare the data
 - Explore data
   - Checked the Data Structure and columns
   - Checked the numbers of features and observations in the data
@@ -56,7 +56,7 @@ git clone https://github.com/kabiromohd/Ride-Duration-Prediction.git
   - Checked for outliers
   - Checked for Duplicates
 
-# Experiment Tracking (Mlflow) and Workflow Orchestration (Mage)
+## Experiment Tracking (Mlflow) and Workflow Orchestration (Mage)
 Launch Mage, Mlflow and the database service (PostgreSQL) a docker-compose.yml is available to launch all the services
 
 Navigate to the following directory by running the following commands on your terminal
@@ -80,7 +80,7 @@ Mlflow: http://hocalhost:5000
 
 Through this you can access the mlflow experiment runs and the orchestration code on Mage
 
-### Deploy model locally with Docker
+## Deploy model locally with Docker
 You can deploy the model on Docker locally by following these steps.
 To do so, you need to have Docker installed on your environment, then you build the image with the following command:
 
@@ -107,6 +107,7 @@ followed by this docker command which runs the docker image created
 docker run -it --rm -p 9090:9090 <your docker user>/<docker repo>:mlopscapstone
 ```
 
+### To interact with the locally Deployed webservice
 if all the above command run successfully, open another terminal and run below command to see Ride prediction for local Docker deployment:
 
 ```
@@ -123,7 +124,7 @@ python predict_test.py
 
 This ends the local deployment to docker.
 
-### Deploy docker image to the cloud
+## Deploy docker image to the cloud
 For cloud deployment [Render](render.com) was used.
 
 To deploy the docker image to cloud, open a terminal and run the following commands:
@@ -132,7 +133,7 @@ To deploy the docker image to cloud, open a terminal and run the following comma
 pipenv shell
 ```
 
-Push the docker image created above to the repo created with the following command:
+- Push the docker image created above to the repo created with the following command:
 
 ```
 docker push <your docker user>/<docker repo>:mlopscapstone
