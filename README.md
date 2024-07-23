@@ -26,7 +26,7 @@ The data is provided by Capital Bikeshare and contains information about bike ri
   - Using Mlflow for Experiment tracking.
   - Registration of Best model on Mlflow
 - Local Webservice Model deployment (Docker + Flask)
-- Cloud Webservice Model deployment [Render](Render.com)
+- Cloud Webservice Model deployment [Render Cloud Service](Render.com)
 - Project Monitoring (Evidently AI)
 
 ## Steps to reproduce:
@@ -125,7 +125,7 @@ python predict_test.py
 This ends the local deployment to docker.
 
 ## Deploy docker image to the cloud
-For cloud deployment [Render](render.com) was used.
+For cloud deployment [Render Cloud Service](render.com) was used.
 
 To deploy the docker image to cloud, open a terminal and run the following commands:
 
@@ -139,14 +139,14 @@ pipenv shell
 docker push <your docker user>/<docker repo>:mlopscapstone
 ```
 
-- copy the docker image URL on to render from the docker repo
+- copy the docker image URL to render from the docker Hub repo
   
 - deploy docker image to render cloud service.
   
 ### To interact with the docker image deployed to cloud via render
-- copy the render deployment link and place in the *predict_test_cloud.py* script as "host".
+- copy the render deployment link, [e.g for my project](https://ride-duration-prediction.onrender.com)  and place in the *predict_test_cloud.py* script as "host".
 - *predict-test_cloud.py* has already prepared data point to be used to test the model deployed to cloud.
-- for this project, the deployment link has already been provided in the .py script. It can be executed as illustrated below:
+- for this project, the deployment link has already been provided in the predict_test_cloud.py script. It can be executed as illustrated below:
   
 - open a new terminal and run the following: 
 
