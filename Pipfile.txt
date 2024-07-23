@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+scikit-learn = "*"
+mlflow = "==2.12.1"
+pandas = "*"
+seaborn = "*"
+hyperopt = "*"
+boto3 = "*"
+fastparquet = "*"
+graphviz = "*"
+shap = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.9"
