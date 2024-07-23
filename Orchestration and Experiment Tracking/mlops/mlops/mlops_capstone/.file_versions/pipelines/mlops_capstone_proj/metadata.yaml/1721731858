@@ -1,0 +1,80 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: mlops_capstone/data_loaders/load_data.py
+  downstream_blocks:
+  - data_prep
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Load_data
+  retry_config: null
+  status: failed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_data
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: mlops_capstone/transformers/data_prep.py
+  downstream_blocks:
+  - data_train_mlflow
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Data_prep
+  retry_config: null
+  status: updated
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_data
+  uuid: data_prep
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: mlops_capstone/data_exporters/data_train_mlflow.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Data_train_mlflow
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - data_prep
+  uuid: data_train_mlflow
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-07-23 10:10:49.633589+00:00'
+data_integration: null
+description: Mlops Capstone Project
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: Mlops_capstone_proj
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: mlops_capstone_proj
+variables_dir: /home/src/mage_data/mlops_capstone
+widgets: []
