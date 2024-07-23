@@ -21,9 +21,9 @@ The data is provided by Capital Bikeshare and contains information about bike ri
   - Data preparation
   - Modelling
   - Baseline model
-  - Hyperparameter tuning using Weights and Biases Sweeps
+  - Hyperparameter tuning using Mage
   - Training the model with the best hyperparameters
-  - Using Mlflow for Experiment tracking.
+  - Experiment tracking with Mlflow.
   - Registration of Best model on Mlflow
 - Local Webservice Model deployment (Docker + Flask)
 - Cloud Webservice Model deployment [Render Cloud Service](Render.com)
