@@ -3,7 +3,7 @@
 
 import requests
 
-host = "life-expectancy-z1bf.onrender.com"
+host = "https://ride-duration-prediction.onrender.com"
 
 url = f'http://{host}/predict'
 
