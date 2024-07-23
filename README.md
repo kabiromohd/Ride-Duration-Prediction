@@ -11,7 +11,7 @@ The underlying ML task is to predict bike ride duration given the start and end 
 A potential customer takes a bike from a station and wants to know how long it will take to get to the destination station. They enter the destination station and the rest of the features are logged automatically. The request is sent to the web service that returns the predicted duration and the customer can decide if they want to take the bike or not.
 
 # The data
-The data is provided by Capital Bikeshare and contains information about bike rides in Washington DC. Downloadable files are available on the following [link](https://divvy-tripdata.s3.amazonaws.com/index.html) The data used for the project model training is April 2020.
+The data is provided by Divvy Bikeshare and contains information about bike rides in Washington DC. Downloadable files are available on the following [link](https://divvy-tripdata.s3.amazonaws.com/index.html) The data used for the project model training is April 2020.
 
 # Project flow
 
@@ -21,12 +21,12 @@ The data is provided by Capital Bikeshare and contains information about bike ri
   - Data preparation
   - Modelling
   - Baseline model
-  - Hyperparameter tuning using Weights and Biases Sweeps
+  - Hyperparameter tuning using Mage
   - Training the model with the best hyperparameters
-  - Using Mlflow for Experiment tracking.
+  - Experiment tracking with Mlflow.
   - Registration of Best model on Mlflow
 - Local Webservice Model deployment (Docker + Flask)
-- Cloud Webservice Model deployment [Render](Render.com)
+- Cloud Webservice Model deployment [Render Cloud Service](Render.com)
 - Project Monitoring (Evidently AI)
 
 ## Steps to reproduce:
@@ -125,7 +125,7 @@ python predict_test.py
 This ends the local deployment to docker.
 
 ## Deploy docker image to the cloud
-For cloud deployment [Render](render.com) was used.
+For cloud deployment [Render Cloud Service](render.com) was used.
 
 To deploy the docker image to cloud, open a terminal and run the following commands:
 
@@ -139,14 +139,14 @@ pipenv shell
 docker push <your docker user>/<docker repo>:mlopscapstone
 ```
 
-- copy the docker image URL on to render from the docker repo
+- copy the docker image URL to render from the docker Hub repo
   
 - deploy docker image to render cloud service.
   
 ### To interact with the docker image deployed to cloud via render
-- copy the render deployment link and place in the *predict_test_cloud.py* script as "host".
+- copy the render deployment link, [e.g for my project](https://ride-duration-prediction.onrender.com)  and place in the *predict_test_cloud.py* script as "host".
 - *predict-test_cloud.py* has already prepared data point to be used to test the model deployed to cloud.
-- for this project, the deployment link has already been provided in the .py script. It can be executed as illustrated below:
+- for this project, the deployment link has already been provided in the predict_test_cloud.py script. It can be executed as illustrated below:
   
 - open a new terminal and run the following: 
 
