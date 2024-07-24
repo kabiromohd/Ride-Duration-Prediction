@@ -1,7 +1,8 @@
 ## Ride-Duration-Prediction
 # Mlops Zoomcamp Capstone Project
 ## The purpose of the project
-The project is to build an end-to-end MLOPS project. 
+
+The project is to build an end-to-end Batch Deployment MLOPS project. 
 
 Important: The project main focus of the project is to show the MLOps flow and not to build the best model.
 
@@ -78,9 +79,12 @@ Mage: http://hocalhost:6789
 
 Mlflow: http://hocalhost:5000
 
-Through this you can access the mlflow experiment runs and the orchestration code on Mage
+Through this you can access the mlflow experiment runs and the orchestration code on Mage.
+
+After training of the model and registration of the best model on Mlflow, you download the Artifacts to your local file system for model deployment.
 
 ## Deploy model locally with Docker
+
 You can deploy the model on Docker locally by following these steps.
 To do so, you need to have Docker installed on your environment, then you build the image with the following command:
 
@@ -125,6 +129,7 @@ python predict_test.py
 This ends the local deployment to docker.
 
 ## Deploy docker image to the cloud
+
 For cloud deployment [Render Cloud Service](render.com) was used.
 
 To deploy the docker image to cloud, open a terminal and run the following commands:
@@ -143,7 +148,8 @@ docker push <your docker user>/<docker repo>:mlopscapstone
   
 - deploy docker image to render cloud service.
   
-### To interact with the docker image deployed to cloud via render
+### To interact with the docker image deployed to cloud via Render Cloud service
+
 - copy the render deployment link, [e.g for my project](https://ride-duration-prediction.onrender.com)  and place in the *predict_test_cloud.py* script as "host".
 - *predict-test_cloud.py* has already prepared data point to be used to test the model deployed to cloud.
 - for this project, the deployment link has already been provided in the predict_test_cloud.py script. It can be executed as illustrated below:
@@ -159,3 +165,28 @@ docker push <your docker user>/<docker repo>:mlopscapstone
   ```
   python predict_test_cloud.py
   ```
+
+# Monitoring with Evidently AI
+
+We quarter prediction data on use of ride is collected and used for monitoring of the model performance
+
+to view the monitoring dashbaord on Evidently AI follow the following:
+
+```
+cd project/monitoring
+
+conda create --name myenv python=3.11
+
+conda activate myenv
+
+pip install -r requirements.txt
+
+python baseline_model_Bikeride_capstone.py
+
+evidently ui
+```
+Go to your browser and open
+
+http://localhost:8000
+
+and you see the deployed dashboard
