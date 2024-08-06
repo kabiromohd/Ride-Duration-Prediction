@@ -5,7 +5,7 @@ import requests
 
 host = "ride-duration-prediction.onrender.com"
 
-url = f'http://{host}/predict'
+url = f'https://{host}/predict'
 
 client_pred = {
     "ride_id": "EACB19130B0CDA4A",
