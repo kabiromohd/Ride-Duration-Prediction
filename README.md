@@ -75,9 +75,9 @@ cd orchestration/mlops
 
 This will launch mlfow and Mage which can be accessed via the browser
 
-Mage: http://hocalhost:6789
+Mage: http://localhost:6789
 
-Mlflow: http://hocalhost:5000
+Mlflow: http://localhost:5000
 
 Through this you can access the mlflow experiment runs and the orchestration code on Mage.
 
